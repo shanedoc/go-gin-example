@@ -1,5 +1,7 @@
 package e
 
+import "log"
+
 var MsgFlags = map[int]string{
 	SUCCESS:                        "ok",
 	ERROR:                          "fail",
@@ -15,7 +17,8 @@ var MsgFlags = map[int]string{
 
 func GetMsg(code int) string {
 	msg, ok := MsgFlags[code]
-	if !ok {
+	log.Println(msg)
+	if ok {
 		return msg
 	}
 	return MsgFlags[ERROR]
