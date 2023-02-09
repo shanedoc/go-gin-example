@@ -11,7 +11,7 @@ import (
 
 func InitRouter() *gin.Engine {
 	//初始化gin实例
-	r := gin.New()
+	r := gin.Default()
 	//使用中间件
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
