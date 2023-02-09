@@ -38,6 +38,7 @@ func init() {
 		fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
 			user,
 			password,
+			host,
 			dbName))
 	if err != nil {
 		log.Println(err)
