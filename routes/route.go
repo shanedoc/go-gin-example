@@ -1,6 +1,7 @@
 package routes
 
 import (
+	_ "github.com/EDDYCJY/go-gin-example/docs"
 	"github.com/gin-gonic/gin"
 	"github.com/shanedoc/go-gin-example/middleware/jwt"
 	"github.com/shanedoc/go-gin-example/pkg/setting"
@@ -19,6 +20,8 @@ func InitRouter() *gin.Engine {
 	gin.SetMode(setting.RunMode)
 
 	r.GET("/auth", api.GetAuth)
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	apiv1 := r.Group("/api/v1")
 	//jwt中间件
